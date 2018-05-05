@@ -31,7 +31,7 @@ class Game
     return result
   end
 
-  def self.find( id )
+  def self.find(id)
     sql = "SELECT * FROM games
     WHERE id = $1"
     values = [id]

@@ -30,7 +30,7 @@ class Team
     return result
   end
 
-  def self.find( id )
+  def self.find(id)
     sql = "SELECT * FROM teams
     WHERE id = $1"
     values = [id]

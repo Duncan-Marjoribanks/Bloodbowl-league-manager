@@ -30,6 +30,13 @@ class Team
     return result
   end
 
+  def self.find( id )
+    sql = "SELECT * FROM teams
+    WHERE id = $1"
+    values = [id]
+    teams_hash = SqlRunner.run(sql, values)
+    return Team.new(teams_hash.first)
+  end
 
   def self.delete_all()
     sql = 'DELETE FROM teams'

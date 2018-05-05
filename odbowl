@@ -1,0 +1,23 @@
+                                  List of databases
+       Name       | Owner | Encoding |   Collate   |    Ctype    | Access privileges 
+------------------+-------+----------+-------------+-------------+-------------------
+ bloodbowl        | dunk  | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ bounties         | dunk  | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ cc_cinema        | dunk  | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ dunk             | dunk  | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ hogwarts         | dunk  | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ imdb             | dunk  | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ marvel           | dunk  | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ music_collection | dunk  | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ pizza_shop       | dunk  | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ postgres         | dunk  | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ quest_advisor    | dunk  | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ star_wars        | dunk  | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ template0        | dunk  | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/dunk          +
+                  |       |          |             |             | dunk=CTc/dunk
+ template1        | dunk  | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/dunk          +
+                  |       |          |             |             | dunk=CTc/dunk
+ zombieland       | dunk  | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ zombies          | dunk  | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+(16 rows)
+

@@ -1,7 +1,5 @@
 require_relative("../db/sql_runner")
 
-
-
 class Team
 
   attr_reader :id, :name
@@ -23,13 +21,20 @@ class Team
   end
 
 
-# class functions below this comment
+  # class functions below this comment
+
+  def self.all()
+    sql = 'SELECT * from teams'
+    teams_hash = SqlRunner.run(sql)
+    result = teams_hash.map{|team| Team.new(team)}
+    return result
+  end
 
 
-def self.delete_all()
-  sql = 'DELETE FROM teams'
-  SqlRunner.run(sql)
-end
+  def self.delete_all()
+    sql = 'DELETE FROM teams'
+    SqlRunner.run(sql)
+  end
 
 
 end

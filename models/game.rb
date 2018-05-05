@@ -23,7 +23,14 @@ class Game
 
 
 
-# class functions below this comment
+  # class functions below this comment
+  def self.all()
+    sql = 'SELECT * from games'
+    games_hash = SqlRunner.run(sql)
+    result = games_hash.map{|game| Game.new(game)}
+    return result
+  end
+
 
   def self.delete_all()
     sql = 'DELETE FROM teams'

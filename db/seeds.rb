@@ -12,7 +12,7 @@ team1 = Team.new ({
 team1.save()
 
 team2 = Team.new ({
-  'name' => 'Orcland Wanderers'
+  'name' => 'Orcland Raiders'
   })
 team2.save()
 

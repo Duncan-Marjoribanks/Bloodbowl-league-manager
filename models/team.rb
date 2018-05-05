@@ -2,7 +2,7 @@ require_relative("../db/sql_runner")
 
 class Team
 
-  attr_reader :id, :name
+attr_reader :id, :name
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -10,16 +10,23 @@ class Team
   end
 
   def save()
-    sql = "INSERT INTO teams
+    sql = 'INSERT INTO teams
     (name)
     VALUES
     ($1)
-    RETURNING id"
+    RETURNING id'
     values = [@name]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
+  def update()
+    sql = 'UPDATE teams
+    SET (name) = ($1)
+    WHERE id = $2'
+    values [@name, @id]
+    SqlRunner.run(sql, values)
+  end
 
   # class functions below this comment
 

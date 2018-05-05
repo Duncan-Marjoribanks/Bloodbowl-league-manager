@@ -33,7 +33,7 @@ class Game
 
 
   def self.delete_all()
-    sql = 'DELETE FROM teams'
+    sql = 'DELETE FROM games'
     SqlRunner.run(sql)
   end
 

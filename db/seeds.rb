@@ -17,9 +17,6 @@ team2 = Team.new ({
   })
 team2.save()
 
-
-
-
 # game seeds
 game1 = Game.new ({
   'team_a' => team1.id,

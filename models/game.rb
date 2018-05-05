@@ -21,4 +21,14 @@ class Game
     @id = result.first()['id'].to_i
   end
 
+
+
+# class functions below this comment
+
+  def self.delete_all()
+    sql = 'DELETE FROM teams'
+    SqlRunner.run
+  end
+
+
 end

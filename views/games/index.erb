@@ -1,0 +1,15 @@
+<h1>Games Played</h1>
+<table>
+  <tr>
+    <th>Team A</th>
+    <th>Team B</th>
+    <th>Winner</th>
+  </tr>
+  <% for game in @games %>
+  <tr>
+    <td><a href='/game/<%game.id%>'><<%=game.team_a%></a></td>
+    <td><a href='/game/<%game.id%>'><<%=game.team_b%></a></td>
+    <td><a href='/game/<%game.id%>'><<%=game.winner%></a></td>
+  </tr>
+  <%end %>
+</table>

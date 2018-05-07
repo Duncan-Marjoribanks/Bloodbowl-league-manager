@@ -8,9 +8,8 @@
       <option value=<%= team.id %>>
         <%=team.name.capitalize%>
       </option>
-    <% end %>
   </select>
-
+<hr>
 <label for="team_b">Team B</label>
   <select name="team_b" id="team_b">
     <% @teams.each do |team| %>
@@ -19,7 +18,7 @@
       </option>
     <% end %>
   </select>
-
+<hr>
 <label for="winner">Winner</label>
   <select name="winner" id="winner">
     <% @teams.each do |team| %>
@@ -28,6 +27,6 @@
       </option>
     <% end %>
   </select>
-
+<hr>
 <input type="submit" value="add_game">
 </form>

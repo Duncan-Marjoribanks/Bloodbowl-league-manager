@@ -1,4 +1,5 @@
 <h1>Games Played</h1>
+<hr>
 <table>
   <tr>
     <a href='/games/add_game'>Log game</a>
@@ -7,17 +8,22 @@
     <th>Team A</th>
     <th>Team B</th>
     <th>Winner</th>
+    <hr>
   </tr>
+  <hr>
   <% for game in @games %>
   <tr>
     <td><a href='/games/<%game.id%>'>
-    <%= game.team(game.team_a, "team_a").name %></a>
+    <%= game.team(game.team_a, "team_a").name.capitalize %></a>
+    <hr>
   </td>
     <td><a href='/games/<%game.id%>'>
-    <%= game.team(game.team_b, "team_b").name %></a>
+    <%= game.team(game.team_b, "team_b").name.capitalize %></a>
+    <hr>
   </td>
     <td><a href='/games/<%game.id%>'>
-    <%= game.team(game.winner, "winner").name %></a>
+    <%= game.team(game.winner, "winner").name.capitalize %></a>
+    <hr>
   </td>
 
   </tr>

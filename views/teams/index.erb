@@ -3,14 +3,12 @@
   <tr>
     <th>Team Name</th>
 <tr>
-<a href='/team/add_team'>Add Team</a>
-</tr>
-<tr>
+<a href='/teams/add_team'>Add Team</a>
 </tr>
   </tr>
     <% for team in @teams %>
   <tr>
-    <td><a href='/team/<%team.id%>'><%=team.name%></a></td>
+    <td><a href='/teams/<%team.id%>'><%=team.name%></a></td>
   </tr>
   <%end  %>
 </table>

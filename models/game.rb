@@ -1,7 +1,10 @@
 require_relative('../db/sql_runner')
+require_relative('./team')
+
 class Game
 
-  attr_reader :id, :team_a, :team_b, :winner
+  attr_reader :id
+  attr_accessor :team_a, :team_b, :winner
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -34,12 +37,12 @@ class Game
     sql = "SELECT teams.name FROM teams
     INNER JOIN games ON teams.id = games.#{game_column}
     WHERE teams.id = $1"
-    values =[team_id]
+    values = [team_id]
     team_hash = SqlRunner.run(sql, values)
     team = Team.new(team_hash.first)
     return team
   end
-  
+
   # class functions below this comment
   def self.all()
     sql = 'SELECT * from games'

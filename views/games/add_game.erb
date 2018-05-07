@@ -1,0 +1,33 @@
+<h2>Log a result</h2>
+
+<form action="/games" method="post">
+
+<label for="team_a">Team A</label>
+  <select name="team_a" id="team_a">
+    <% @teams.each do |team| %>
+      <option value=<%= team.id %>>
+        <%=team.name.capitalize%>
+      </option>
+    <% end %>
+  </select>
+
+<label for="team_b">Team B</label>
+  <select name="team_b" id="team_b">
+    <% @teams.each do |team| %>
+      <option value=<%= team.id %>>
+        <%=team.name.capitalize%>
+      </option>
+    <% end %>
+  </select>
+
+<label for="winner">Winner</label>
+  <select name="winner" id="winner">
+    <% @teams.each do |team| %>
+      <option value=<%= team.id %>>
+        <%=team.name.capitalize%>
+      </option>
+    <% end %>
+  </select>
+
+<input type="submit" value="add_game">
+</form>

@@ -20,7 +20,7 @@ post '/games' do
 end
 
 post '/games/:id/delete' do
-  game = Game.find(params['id'])
+  game = Game.find(params['id'].to_i)
   game.delete
   redirect to '/games'
 end

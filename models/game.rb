@@ -59,6 +59,13 @@ class Game
     return Game.new(games_hash.first)
   end
 
+  def self.delete(id)
+    sql = "DELETE * FROM games
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.delete_all()
     sql = 'DELETE FROM games'
     SqlRunner.run(sql)

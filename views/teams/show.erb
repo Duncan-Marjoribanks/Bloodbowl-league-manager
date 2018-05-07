@@ -1,2 +1,6 @@
 <h2><%=@team.name%></h2>
 <p>team page</p>
+<form action="/teams/<%=@team.id%>/delete" method="post">
+  <input type="submit" name="delete" value="Delete Team">
+
+</form>

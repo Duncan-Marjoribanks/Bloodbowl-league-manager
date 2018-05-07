@@ -1,0 +1,16 @@
+<h1>Teams</h1>
+<table>
+  <tr>
+    <th>Team Name</th>
+<tr>
+<a href='/team/add_team'>Add Team</a>
+</tr>
+<tr>
+</tr>
+  </tr>
+    <% for team in @teams %>
+  <tr>
+    <td><a href='/team/<%team.id%>'><%=team.name%></a></td>
+  </tr>
+  <%end  %>
+</table>

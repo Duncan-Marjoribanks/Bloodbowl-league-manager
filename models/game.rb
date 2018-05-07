@@ -29,6 +29,17 @@ class Game
     SqlRunner.run(sql, values)
   end
 
+
+  def team(team_id, game_column)
+    sql = "SELECT teams.name FROM teams
+    INNER JOIN games ON teams.id = games.#{game_column}
+    WHERE teams.id = $1"
+    values =[team_id]
+    team_hash = SqlRunner.run(sql, values)
+    team = Team.new(team_hash.first)
+    return team
+  end
+  
   # class functions below this comment
   def self.all()
     sql = 'SELECT * from games'

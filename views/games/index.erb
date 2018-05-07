@@ -7,9 +7,15 @@
   </tr>
   <% for game in @games %>
   <tr>
-    <td><a href='/game/<%game.id%>'><<%=game.team_a%></a></td>
-    <td><a href='/game/<%game.id%>'><<%=game.team_b%></a></td>
-    <td><a href='/game/<%game.id%>'><<%=game.winner%></a></td>
+    <td><a href='/game/<%game.id%>'>
+    <%=game.team(game.team_a,"team_a").name%></a>
+  </td>
+    <td><a href='/game/<%game.id%>'>
+    <%=game.team(game.team_b,"team_b").name%></a>
+  </td>
+    <td><a href='/game/<%game.id%>'>
+    <%=game.team(game.winner, "winner").name%></a>
+  </td>
   </tr>
   <%end %>
 </table>

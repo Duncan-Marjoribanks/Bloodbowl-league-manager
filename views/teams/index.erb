@@ -11,11 +11,10 @@
     <% for team in @teams %>
   <tr>
     <td>
-      <a href='/teams/<%team.id%>'>
-      <%= team.name.capitalize %>
+      <a href='/teams/<%=team.id%>'><%= team.name.capitalize %>
       </a>
       <hr>
     </td>
   </tr>
-  <%end  %>
+  <% end  %>
 </table>

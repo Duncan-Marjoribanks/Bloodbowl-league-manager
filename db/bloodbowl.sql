@@ -8,7 +8,7 @@ CREATE TABLE teams (
 
 CREATE TABLE games (
   id SERIAL4 PRIMARY KEY,
-  team_a INT4 REFERENCES teams(id) ON DELETE CASCADE,
-  team_b INT4 REFERENCES teams(id) ON DELETE CASCADE,
-  winner INT4 REFERENCES teams(id) ON DELETE CASCADE
+  team_a INT4 REFERENCES teams(id),
+  team_b INT4 REFERENCES teams(id),
+  winner INT4 REFERENCES teams(id)
 );

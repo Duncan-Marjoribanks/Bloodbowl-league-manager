@@ -13,15 +13,15 @@
   <hr>
   <% for game in @games %>
   <tr>
-    <td><a href='/games/<%game.id%>'>
+    <td><a href='/teams/<%=game.team_a%>'>
     <%= game.team(game.team_a, "team_a").name.capitalize %></a>
     <hr>
   </td>
-    <td><a href='/games/<%game.id%>'>
+    <td><a href='/teams/<%= game.team_b%>'>
     <%= game.team(game.team_b, "team_b").name.capitalize %></a>
     <hr>
   </td>
-    <td><a href='/games/<%game.id%>'>
+    <td><a href='/teams/<%= game.winner%>'>
     <%= game.team(game.winner, "winner").name.capitalize %></a>
     <hr>
   </td>

@@ -25,6 +25,12 @@ post '/games/:id/delete' do
   redirect to '/games'
 end
 
+post '/games/:id/update' do
+  game = Game.find(params['id'].to_i)
+  game.update
+  redirect to '/games'
+end
+
 get '/games/:id' do
   @game = Game.find(params['id'].to_i)
   erb( :"game/show" )

@@ -1,6 +1,7 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/team')
+require_relative('../models/game')
 
 
 
@@ -25,7 +26,14 @@ post '/teams/:id/delete' do
   redirect to '/teams'
 end
 
+post '/teams/:id/update' do
+  team = Team.find(params['id'].to_i)
+  team.update
+  redirect to '/teams'
+end
+
 get '/teams/:id' do
   @team = Team.find(params['id'].to_i)
+  @games = Game.all()
   erb( :"teams/show" )
 end

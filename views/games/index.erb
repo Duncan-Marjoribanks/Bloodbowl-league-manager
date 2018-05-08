@@ -29,5 +29,9 @@
   </tr>
 
   <% end %>
-
 </table>
+
+<form action="/games/delete_all" method="post">
+  <label for="delete_all">Warning - This will Delete ALL Games</label>
+  <input type="submit" value="Clear League Table" id="delete_all">
+</form>

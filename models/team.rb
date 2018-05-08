@@ -55,11 +55,11 @@ def get_opponent_id(place)
   return result
 end
 
-def get_opponent_home_game
+def get_opponent_home_games
   return get_opponent_id("home")
 end
 
-def get_opponent_away_game
+def get_opponent_away_games
   return get_opponent_id("away")
 end
 

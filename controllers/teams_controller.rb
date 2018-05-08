@@ -27,7 +27,7 @@ post '/teams/:id/delete' do
 end
 
 post '/teams/:id/update' do
-  team = Team.find(params['id'].to_i)
+  team = Team.new(params)
   team.update
   redirect to '/teams'
 end

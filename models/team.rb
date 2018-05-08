@@ -23,9 +23,9 @@ attr_accessor :name
 
   def update()
     sql = 'UPDATE teams
-    SET (name) = ($1)
+    SET name = $1
     WHERE id = $2'
-    values [@name, @id]
+    values = [@name, @id]
     SqlRunner.run(sql, values)
   end
 

@@ -28,7 +28,7 @@ class Game
     sql = 'UPDATE games
     SET (team_a, team_b, winner) = ($1, $2, $3)
     WHERE id = $4'
-    values [@team_a, @team_b, @winner, @id]
+    values = [@team_a, @team_b, @winner, @id]
     SqlRunner.run(sql, values)
   end
 

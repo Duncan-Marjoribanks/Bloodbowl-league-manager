@@ -7,12 +7,14 @@
     <th>Opponent</th>
     <th>Winner</th>
   </tr>
-<% team_names = @team.get_opponent_away_games %>
+<% team_names = @team.get_opponent_home_games %>
+<% if team_names != nil  %>
 <% for team_name in team_names %>
  <tr>
    <td><%= team_name%></th>
    <td> placeholder</th>
  </tr>
+<%end  %>
 <%end  %>
 <tr>
 

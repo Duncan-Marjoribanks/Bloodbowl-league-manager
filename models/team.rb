@@ -50,9 +50,9 @@ def get_opponent_id(place)
   opponent_place = "away" if place == "home"
   sql = "SELECT games.#{opponent_place} FROM games WHERE games.#{place}= $1"
   values = [@id]
-  result = SqlRunner.run(sql, values)
-
-  return result
+  results_hash = SqlRunner.run(sql, values)
+  team_id = results_hash
+  return team_id
 end
 
 def get_opponent_home_games

@@ -5,20 +5,20 @@
     <a href='/games/add_game'>Log game</a>
   </tr>
   <tr>
-    <th>Team A</th>
-    <th>Team B</th>
+    <th>Home Team</th>
+    <th>Away Team</th>
     <th>Winner</th>
     <hr>
   </tr>
   <hr>
   <% for game in @games %>
   <tr>
-    <td><a href='/teams/<%=game.team_a%>'>
-    <%= game.team(game.team_a, "team_a").name %></a>
+    <td><a href='/teams/<%=game.home%>'>
+    <%= game.team(game.home, "home").name %></a>
     <hr>
   </td>
-    <td><a href='/teams/<%= game.team_b%>'>
-    <%= game.team(game.team_b, "team_b").name %></a>
+    <td><a href='/teams/<%= game.away%>'>
+    <%= game.team(game.away, "away").name %></a>
     <hr>
   </td>
     <td><a href='/teams/<%= game.winner%>'>

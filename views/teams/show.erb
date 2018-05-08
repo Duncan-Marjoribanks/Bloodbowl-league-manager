@@ -1,5 +1,25 @@
 <h2><%=@team.name%></h2>
 <p>team page</p>
+
+<table>
+  <head>Away Games</head>
+  <tr>
+    <th>Opponent</th>
+    <th>Winner</th>
+  </tr>
+  <hr>
+  <% results = @team.played_away  %>
+  <% for result in results %>
+  <tr>
+    <td><%= result %></td>
+</tr>
+<tr>
+
+</tr>
+  <% end  %>
+</table>
+<hr>
+
 <form action="/teams/<%=@team.id%>/delete" method="post">
   <input type="submit" name="delete" value="Delete Team">
 </form>

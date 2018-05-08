@@ -4,31 +4,31 @@ require_relative('./team')
 class Game
 
   attr_reader :id
-  attr_accessor :team_a, :team_b, :winner
+  attr_accessor :home, :away, :winner
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @team_a = options['team_a']
-    @team_b = options['team_b']
+    @home = options['home']
+    @away = options['away']
     @winner = options['winner']
   end
 
   def save()
     sql = 'INSERT INTO games
-    (team_a, team_b, winner)
+    (home, away, winner)
     VALUES
     ($1, $2, $3)
     RETURNING id'
-    values = [@team_a, @team_b, @winner]
+    values = [@home, @away, @winner]
     result = SqlRunner.run(sql, values)
     @id = result.first()['id'].to_i
   end
 
   def update()
     sql = 'UPDATE games
-    SET (team_a, team_b, winner) = ($1, $2, $3)
+    SET (home, away, winner) = ($1, $2, $3)
     WHERE id = $4'
-    values = [@team_a, @team_b, @winner, @id]
+    values = [@home, @away, @winner, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -70,6 +70,7 @@ class Game
     sql = 'DELETE FROM games'
     SqlRunner.run(sql)
   end
+
 
 
 end

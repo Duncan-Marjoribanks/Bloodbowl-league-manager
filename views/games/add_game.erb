@@ -2,8 +2,8 @@
 
 <form action="/games" method="post">
 
-<label for="team_a">Team A</label>
-  <select name="team_a" id="team_a">
+<label for="home">Team A</label>
+  <select name="home" id="home">
     <% @teams.each do |team| %>
       <option value=<%= team.id %>>
         <%=team.name.capitalize%>
@@ -12,8 +12,8 @@
   </select>
 <hr>
 
-<label for="team_b">Team B</label>
-  <select name="team_b" id="team_b">
+<label for="away">Team B</label>
+  <select name="away" id="away">
     <% @teams.each do |team| %>
       <option value=<%= team.id %>>
         <%=team.name.capitalize%>

@@ -34,7 +34,7 @@ end
 
 get '/teams/:id' do
   @team = Team.find(params['id'].to_i)
-  @games = Game.all()
+  @games = Game.all
   erb( :"teams/show" )
 end
 

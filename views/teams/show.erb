@@ -1,4 +1,4 @@
-<h2><%=@team.name%></h2>
+<h2><%= @team.name %></h2>
 <p>team page</p>
 
 <table>
@@ -7,16 +7,17 @@
     <th>Opponent</th>
     <th>Winner</th>
   </tr>
-  <hr>
-  <% results = @team.played_away  %>
-  <% for result in results %>
-  <tr>
-    <td><%= result %></td>
-</tr>
+<% team_names = @team.get_opponent_away_games %>
+<% for team_name in team_names %>
+ <tr>
+   <td><%= team_name%></th>
+   <td> placeholder</th>
+ </tr>
+<%end  %>
 <tr>
 
 </tr>
-  <% end  %>
+
 </table>
 <hr>
 

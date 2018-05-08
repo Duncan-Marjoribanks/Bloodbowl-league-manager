@@ -29,21 +29,40 @@ attr_accessor :name
     SqlRunner.run(sql, values)
   end
 
-def played_away()
-  sql = 'SELECT games.home FROM games INNER JOIN teams ON teams.id = games.away WHERE teams.id = $1'
+def played_games(place)
+  sql = "SELECT * FROM games WHERE games.#{place} = $1"
   values = [@id]
-  result_hash = SqlRunner.run(sql, values)
-  result = result_hash.map{|result| Team.new(result)}
-  return result
+  results = SqlRunner.run(sql, values)
+  results_array = results.map{|result| Game.new(result)}
+  return results_array
+end
+
+def played_away()
+  return played_games("away")
 end
 
 def played_at_home()
-  sql = 'SELECT games.away FROM games INNER JOIN teams ON teams.id = games.home WHERE teams.id = $1'
+  return played_games("home")
+end
+
+def get_opponent_id(place)
+  opponent_place = "home" if place == "away"
+  opponent_place = "away" if place == "home"
+  sql = "SELECT games.#{opponent_place} FROM games WHERE games.#{place}= $1"
   values = [@id]
-  result_hash = SqlRunner.run(sql, values)
-  result = result_hash.map{|result| Team.new(result)}
+  result = SqlRunner.run(sql, values)
+
   return result
 end
+
+def get_opponent_home_game
+  return get_opponent_id("home")
+end
+
+def get_opponent_away_game
+  return get_opponent_id("away")
+end
+
   # class functions below this comment
 
   def self.all()

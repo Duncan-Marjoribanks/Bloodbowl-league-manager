@@ -33,9 +33,9 @@ class Game
   end
 
 
-  def team(team_id, game_column)
+  def team(team_id, team_column)
     sql = "SELECT teams.name FROM teams
-    INNER JOIN games ON teams.id = games.#{game_column}
+    INNER JOIN games ON teams.id = games.#{team_column}
     WHERE teams.id = $1"
     values = [team_id]
     team_hash = SqlRunner.run(sql, values)

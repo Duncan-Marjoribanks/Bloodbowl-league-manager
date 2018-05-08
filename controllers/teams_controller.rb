@@ -37,3 +37,8 @@ get '/teams/:id' do
   @games = Game.all()
   erb( :"teams/show" )
 end
+
+post '/teams/delete_all' do
+  Team.delete_all
+  redirect to '/teams'
+end

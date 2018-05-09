@@ -1,5 +1,5 @@
 <h2><%= @team.name %></h2>
-<h3>Team Bio</h3>
+<h3>Race Bio</h3>
 <p><%= @team.race_bio.first[1]  %></p>
 
 <hr>
@@ -35,6 +35,7 @@
 </table>
 <hr>
 <form action="/teams/<%=@team.id%>/delete" method="post">
+  <input type="checkbox" name="confirmation" value="Delete Team"required="required">
   <input type="submit" name="delete" value="Delete Team">
 </form>
 <hr>

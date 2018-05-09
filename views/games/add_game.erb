@@ -2,7 +2,7 @@
 
 <form action="/games" method="post">
 
-<label for="home">Team A</label>
+<label for="home">Home Team</label>
   <select name="home" id="home">
     <% @teams.each do |team| %>
       <option value=<%= team.id %>>
@@ -12,7 +12,7 @@
   </select>
 <hr>
 
-<label for="away">Team B</label>
+<label for="away">Away Team</label>
   <select name="away" id="away">
     <% @teams.each do |team| %>
       <option value=<%= team.id %>>

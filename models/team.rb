@@ -45,23 +45,22 @@ def played_at_home()
   return played_games("home")
 end
 
-def get_opponent_id(place)
-  opponent_place = "home" if place == "away"
-  opponent_place = "away" if place == "home"
-  sql = "SELECT games.#{opponent_place} FROM games WHERE games.#{place}= $1"
-  values = [@id]
-  results_hash = SqlRunner.run(sql, values)
-  team_id = results_hash
-  return team_id
-end
-
-def get_opponent_home_games
-  return get_opponent_id("home")
-end
-
-def get_opponent_away_games
-  return get_opponent_id("away")
-end
+# def get_opponent_id(place)
+#   opponent_place = "home" if place == "away"
+#   opponent_place = "away" if place == "home"
+#   sql = "SELECT games.#{opponent_place} FROM games WHERE games.#{place}= $1"
+#   values = [@id]
+#   results_hash = SqlRunner.run(sql, values)
+#   return results_hash.first["#{opponent_place}"]
+# end
+#
+# def get_opponent_home_games
+#   return get_opponent_id("home")
+# end
+#
+# def get_opponent_away_games
+#   return get_opponent_id("away")
+# end
 
   # class functions below this comment
 

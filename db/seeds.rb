@@ -32,9 +32,23 @@ race3.save()
 race4 = Race.new ({
   'id' => 4,
   'name' => 'Chaotic Mutants',
-  'bio' => 'Hailing from the frozen north of the Chaos wastes, this rabble of outcasts and heretical mutants have banded together to stomp some heads and score some goals. Having a few extra limbs an horns never hurts their chances either.'
+  'bio' => 'Hailing from the frozen north of the Chaos wastes, this rabble of outcasts and heretical mutants have banded together to stomp some heads and score some goals. Having a few extra limbs and horns never hurts their chances either.'
   })
 race4.save()
+
+race5 = Race.new ({
+  'id' => 5,
+  'name' => 'Elves',
+  'bio' => 'Elves are fragile, pointy, and FAST. They believe they are the best and are irritatingly often proven to be right, which makes it all the more satisfying when one of them is maimed on the pitch'
+  })
+race5.save()
+
+race6 = Race.new ({
+  'id' => 6,
+  'name' => 'Dwarves',
+  'bio' => 'Dwarves are a stubborn and stalwart race, favouring a slow solid advance over a fast uncontrolled rush. This is true even when it comes to Blood Bowl. Many Dwarf teams believe a good defence is the best offence, just dont ask them top pass the ball.'
+  })
+race6.save
 
 #team seeds
 team1 = Team.new ({
@@ -61,14 +75,24 @@ team4 = Team.new ({
   })
 team4.save()
 
+team5 = Team.new ({
+  'name' => 'Elfheim Eagles',
+  'race' => race5.id
+  })
+team5.save()
 
+team6 = Team.new ({
+  'name' => 'Dwarven Giants',
+  'race' => race6.id
+  })
+team6.save()
 
 # game seeds
 game1 = Game.new ({
   'home' => team1.id,
   'home_score' => 3,
   'away' => team2.id,
-  'away_score' => 2,
+  'away_score' => 2
   })
 game1.save()
 
@@ -76,7 +100,7 @@ game2 = Game.new ({
   'home' => team1.id,
   'home_score' => 3,
   'away' => team2.id,
-  'away_score' => 4,
+  'away_score' => 4
   })
 game2.save()
 
@@ -84,7 +108,7 @@ game3 = Game.new ({
   'home' => team3.id,
   'home_score' => 5,
   'away' => team4.id,
-  'away_score' => 2,
+  'away_score' => 2
   })
 game3.save()
 
@@ -92,10 +116,33 @@ game4 = Game.new ({
   'home' => team4.id,
   'home_score' => 2,
   'away' => team2.id,
-  'away_score' => 4,
+  'away_score' => 4
   })
 game4.save()
 
+game5 = Game.new ({
+  'home' => team5.id,
+  'home_score' => 5,
+  'away' => team3.id,
+  'away_score' => 4
+  })
+game5.save()
+
+game6 = Game.new ({
+  'home' => team2.id,
+  'home_score' => 2,
+  'away' => team5.id,
+  'away_score' => 3
+  })
+game6.save()
+
+game7 = Game.new ({
+  'home' => team6.id,
+  'home_score' => 1,
+  'away' => team3.id,
+  'away_score' => 3
+  })
+  game7.save()
 
 
 

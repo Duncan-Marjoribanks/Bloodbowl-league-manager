@@ -44,15 +44,14 @@ class Game
     return team
   end
 
-def winner()
- if @away_score > @home_score
-   winning_team_id = @away
- elsif @away_score < @home_score
-   winning_team_id = @home
- else winning_team = "draw"
- return winning_team
-end
-end
+  def winner()
+    if @away_score > @home_score
+      winning_team_id = @away
+    elsif @away_score < @home_score
+      winning_team_id = @home
+      return winning_team_id
+    end
+  end
 
   # class functions below this comment
   def self.all()

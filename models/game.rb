@@ -5,7 +5,7 @@ require_relative('./race')
 class Game
 
   attr_reader :id
-  attr_accessor :home, :away, :winner, :home_score, :away_score
+  attr_accessor :home, :away, :home_score, :away_score
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -13,25 +13,24 @@ class Game
     @home_score = options['home_score'].to_i
     @away = options['away']
     @away_score = options['away_score'].to_i
-    @winner = options['winner']
   end
 
   def save()
     sql = 'INSERT INTO games
-    (home, home_score, away, away_score, winner)
+    (home, home_score, away, away_score)
     VALUES
-    ($1, $2, $3, $4, $5)
+    ($1, $2, $3, $4)
     RETURNING id'
-    values = [@home, @home_score, @away, @away_score, @winner]
+    values = [@home, @home_score, @away, @away_score]
     result = SqlRunner.run(sql, values)
     @id = result.first()['id'].to_i
   end
 
   def update()
     sql = 'UPDATE games
-    SET (home, home_score, away, away_score, winner) = ($1, $2, $3, $4, $5)
-    WHERE id = $6'
-    values = [@home, @away, @winner, @id]
+    SET (home, home_score, away, away_score) = ($1, $2, $3, $4)
+    WHERE id = $5'
+    values = [@home, @home_score, @away, @away_score, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -44,6 +43,12 @@ class Game
     team = Team.new(team_hash.first)
     return team
   end
+
+def winner()
+ winning_team = @home if @home_score > @away_score
+ winning_team = @away if @home_score < @away_score
+ return winning_team
+end
 
   # class functions below this comment
   def self.all()

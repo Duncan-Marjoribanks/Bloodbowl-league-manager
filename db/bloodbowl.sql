@@ -20,6 +20,5 @@ CREATE TABLE games (
   home INT4 REFERENCES teams(id) ON DELETE CASCADE,
   home_score INT4,
   away INT4 REFERENCES teams(id) ON DELETE CASCADE,
-  away_score INT4,
-  winner INT4 REFERENCES teams(id) ON DELETE CASCADE
+  away_score INT4
 );

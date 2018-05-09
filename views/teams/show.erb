@@ -13,8 +13,7 @@
   <%away_games_played = @team.played_away  %>
   <% for game in away_games_played  %>
   <tr>
-    <td>
-    <%= Team.find(game.home).name %>
+    <td><a href="/teams/<%= Team.find(game.home).id %>"><%= Team.find(game.home).name %></a>
   </td>
    <td><a href="/teams/<%=Team.find(game.winner).id %>"><%=Team.find(game.winner).name %></td>
   </tr>
@@ -23,8 +22,7 @@
   <%home_games_played = @team.played_at_home %>
   <% for game in home_games_played  %>
   <tr>
-    <td>
-    <%= Team.find(game.away).name %>
+    <td><a href="/teams/<%= Team.find(game.away).id %>"><%= Team.find(game.away).name %></a>
   </td>
    <td><a href="/teams/<%=Team.find(game.winner).id %>"><%=Team.find(game.winner).name %></td>
   </tr>

@@ -1,9 +1,18 @@
 DROP TABLE games;
 DROP TABLE teams;
+DROP TABLE races;
+
+
+CREATE TABLE races (
+  id INT4 PRIMARY KEY,
+  name VARCHAR(255),
+  bio VARCHAR(255)
+);
 
 CREATE TABLE teams (
   id SERIAL4 PRIMARY KEY,
-  name VARCHAR(255)
+  name VARCHAR(255),
+  race INT4 REFERENCES races(id) ON DELETE CASCADE
 );
 
 CREATE TABLE games (

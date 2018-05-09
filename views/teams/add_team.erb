@@ -1,6 +1,19 @@
 <h2>Create a new team</h2>
+
 <form action="/teams" method="post">
+
 <label for="team_name">Team Name</label>
-<input type="text" name="name" id="team_name">
+<input type="text" name="name" id="team_name" required="required">
+
+<label for="race">Race</label>
+  <select name="race" id="race">
+    <% @races.each do |race| %>
+      <option value=<%= race.id %>>
+        <%=race.name.capitalize%>
+      </option>
+      <% end %>
+  </select>
+
 <input type="submit" value="Create Team">
+
 </form>

@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner')
 require_relative('./team')
+require_relative('./race')
 
 class Game
 
@@ -31,7 +32,6 @@ class Game
     values = [@home, @away, @winner, @id]
     SqlRunner.run(sql, values)
   end
-
 
   def team(team_id, team_column)
     sql = "SELECT teams.name FROM teams

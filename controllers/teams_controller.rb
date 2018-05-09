@@ -2,7 +2,7 @@ require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/team')
 require_relative('../models/game')
-
+require_relative('../models/race')
 
 
 get '/teams' do
@@ -11,6 +11,7 @@ get '/teams' do
 end
 
 get '/teams/add_team' do
+  @races = Race.all()
   erb ( :"teams/add_team" )
 end
 

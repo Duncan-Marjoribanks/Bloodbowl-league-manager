@@ -2,21 +2,22 @@ require_relative("../db/sql_runner")
 
 class Team
 
-attr_reader :id
-attr_accessor :name
+  attr_reader :id
+  attr_accessor :name, :race
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
+    @race =options['race'].to_i
   end
 
   def save()
     sql = 'INSERT INTO teams
-    (name)
+    (name, race)
     VALUES
-    ($1)
+    ($1, $2)
     RETURNING id'
-    values = [@name]
+    values = [@name, @race]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -29,40 +30,21 @@ attr_accessor :name
     SqlRunner.run(sql, values)
   end
 
-def played_games(place)
-  sql = "SELECT * FROM games WHERE games.#{place} = $1"
-  values = [@id]
-  results = SqlRunner.run(sql, values)
-  results_array = results.map{|result| Game.new(result)}
-  return results_array
-end
+  def played_games(place)
+    sql = "SELECT * FROM games WHERE games.#{place} = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    results_array = results.map{|result| Game.new(result)}
+    return results_array
+  end
 
-def played_away()
-  return played_games("away")
-end
+  def played_away()
+    return played_games("away")
+  end
 
-def played_at_home()
-  return played_games("home")
-end
-
-# def get_opponent_id(place)
-#   opponent_place = "home" if place == "away"
-#   opponent_place = "away" if place == "home"
-#   sql = "SELECT games.#{opponent_place} FROM games WHERE games.#{place}= $1"
-#   values = [@id]
-#   results_hash = SqlRunner.run(sql, values)
-#   return results_hash.first["#{opponent_place}"]
-# end
-#
-# def get_opponent_home_games
-#   return get_opponent_id("home")
-# end
-#
-# def get_opponent_away_games
-#   return get_opponent_id("away")
-# end
-
-  # class functions below this comment
+  def played_at_home()
+    return played_games("home")
+  end
 
   def self.all()
     sql = 'SELECT * from teams'
@@ -91,5 +73,11 @@ end
     SqlRunner.run(sql)
   end
 
+  def race_bio()
+    sql = 'SELECT races.bio FROM races WHERE races.id = $1'
+    values =[@race]
+    race = SqlRunner.run(sql,values)
+    return race.first
+  end
 
 end

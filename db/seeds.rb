@@ -66,28 +66,36 @@ team4.save()
 # game seeds
 game1 = Game.new ({
   'home' => team1.id,
+  'home_score' => 3,
   'away' => team2.id,
+  'away_score' => 2,
   'winner' => team1.id
   })
 game1.save()
 
 game2 = Game.new ({
   'home' => team1.id,
+  'home_score' => 3,
   'away' => team2.id,
+  'away_score' => 4,
   'winner' => team2.id
   })
 game2.save()
 
 game3 = Game.new ({
   'home' => team3.id,
+  'home_score' => 5,
   'away' => team4.id,
+  'away_score' => 2,
   'winner' => team3.id
   })
 game3.save()
 
 game4 = Game.new ({
   'home' => team4.id,
+  'home_score' => 2,
   'away' => team2.id,
+  'away_score' => 4,
   'winner' => team2.id
   })
 game4.save()

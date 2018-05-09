@@ -26,7 +26,7 @@
     <hr>
   </td>
    <td><%= game.away_score() %></td>
-   <td> Winner function placeholder</td>
+   <td><a href="/teams/<%=Team.find(game.winner).id %>"><%=Team.find(game.winner).name %></td>
 </tr>
   <% end %>
 </table>

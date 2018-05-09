@@ -5,7 +5,7 @@ require_relative('./race')
 class Game
 
   attr_reader :id
-  attr_accessor :home, :away, :winner
+  attr_accessor :home, :away, :winner, :home_score, :away_score
 
   def initialize(options)
     @id = options['id'].to_i if options['id']

@@ -10,25 +10,27 @@ class Game
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @home = options['home']
+    @home_score = options['home_score'].to_i
     @away = options['away']
+    @away_score = options['away_score'].to_i
     @winner = options['winner']
   end
 
   def save()
     sql = 'INSERT INTO games
-    (home, away, winner)
+    (home, home_score, away, away_score, winner)
     VALUES
-    ($1, $2, $3)
+    ($1, $2, $3, $4, $5)
     RETURNING id'
-    values = [@home, @away, @winner]
+    values = [@home, @home_score, @away, @away_score, @winner]
     result = SqlRunner.run(sql, values)
     @id = result.first()['id'].to_i
   end
 
   def update()
     sql = 'UPDATE games
-    SET (home, away, winner) = ($1, $2, $3)
-    WHERE id = $4'
+    SET (home, home_score, away, away_score, winner) = ($1, $2, $3, $4, $5)
+    WHERE id = $6'
     values = [@home, @away, @winner, @id]
     SqlRunner.run(sql, values)
   end

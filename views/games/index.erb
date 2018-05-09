@@ -6,7 +6,9 @@
   </tr>
   <tr>
     <th>Home Team</th>
+    <th>Home Score</th>
     <th>Away Team</th>
+    <th>Away Score</th>
     <th>Winner</th>
     <hr>
   </tr>
@@ -17,10 +19,12 @@
     <%= game.team(game.home, "home").name %></a>
     <hr>
   </td>
+   <td>home score</td>
     <td><a href='/teams/<%= game.away%>'>
     <%= game.team(game.away, "away").name %></a>
     <hr>
   </td>
+   <td>away score</td>
     <td><a href='/teams/<%= game.winner%>'>
     <%= game.team(game.winner, "winner").name %></a>
     <hr>

@@ -12,6 +12,11 @@
   </select>
 <hr>
 
+<label for="home_score">Home Team Score</label>
+  <input type="number" name="home_score" id="home_score">
+</input>
+<hr>
+
 <label for="away">Away Team</label>
   <select name="away" id="away">
     <% @teams.each do |team| %>
@@ -20,6 +25,11 @@
       </option>
     <% end %>
   </select>
+<hr>
+
+<label for="away_score">Away Team Score</label>
+  <input type="number" name="away_score" id="away_score">
+</input>
 <hr>
 
 <label for="winner">Winner</label>

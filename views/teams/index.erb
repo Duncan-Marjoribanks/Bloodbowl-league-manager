@@ -21,4 +21,5 @@
 
 <form action="/teams/delete_all" method="post">
   <label for="delete_all">Warning - This will Delete ALL Teams and Games</label>
+    <input type="checkbox" name="confirmation" value="delete_all" required="required">
   <input type="submit" value="Clear Team Data" id="delete_all">

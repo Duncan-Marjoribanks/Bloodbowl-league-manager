@@ -19,19 +19,15 @@
     <%= game.team(game.home, "home").name %></a>
     <hr>
   </td>
-   <td><%= game.home_score %></td>
+   <td><%= game.home_score() %></td>
+
     <td><a href='/teams/<%= game.away%>'>
     <%= game.team(game.away, "away").name %></a>
     <hr>
   </td>
-   <td><%= game.away_score %></td>
-    <td><a href='/teams/<%= game.winner%>'>
-    <%= game.team(game.winner, "winner").name %></a>
-    <hr>
-  </td>
-
-  </tr>
-
+   <td><%= game.away_score() %></td>
+   <td> Winner function placeholder</td>
+</tr>
   <% end %>
 </table>
 

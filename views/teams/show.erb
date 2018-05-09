@@ -16,8 +16,7 @@
     <td>
     <%= Team.find(game.home).name %>
   </td>
-  <td>placeholder for game winner function
-  </td>
+   <td><a href="/teams/<%=Team.find(game.winner).id %>"><%=Team.find(game.winner).name %></td>
   </tr>
   <% end %>
 
@@ -27,8 +26,7 @@
     <td>
     <%= Team.find(game.away).name %>
   </td>
-  <td>Winner function placeholder
-  </td>
+   <td><a href="/teams/<%=Team.find(game.winner).id %>"><%=Team.find(game.winner).name %></td>
   </tr>
   <%end  %>
 

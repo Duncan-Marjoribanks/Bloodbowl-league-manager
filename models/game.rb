@@ -45,9 +45,13 @@ class Game
   end
 
 def winner()
- winning_team = @home if @home_score > @away_score
- winning_team = @away if @home_score < @away_score
+ if @away_score > @home_score
+   winning_team_id = @away
+ elsif @away_score < @home_score
+   winning_team_id = @home
+ else winning_team = "draw"
  return winning_team
+end
 end
 
   # class functions below this comment

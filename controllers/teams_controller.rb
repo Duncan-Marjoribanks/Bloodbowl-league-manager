@@ -23,7 +23,7 @@ end
 
 post '/teams/:id/delete' do
   team = Team.find(params['id'].to_i)
-  team.delete
+  team.delete()
   redirect to '/teams'
 end
 

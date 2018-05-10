@@ -1,28 +1,31 @@
 <div class="teams_page">
-<h1>Teams</h1>
-<table>
-  <tr>
-    <th>Team Name</th>
-    <th>Logo</th>
-    <hr>
-<tr>
-<a href='/teams/add_team'>Add Team</a>
-<hr>
-</tr>
-  </tr>
-    <% for team in @teams %>
-  <tr>
-    <td>
-      <a href='/teams/<%=team.id%>'><%= team.name %>
-      </a>
-    </td>
-    <td><img src="<%=team.logo%>" alt="team_logo"></td>
-  </tr>
-  <% end  %>
-</table>
+  <div class="button">
+    <div class="log">
+      <a href='/teams/add_team'>Add Team</a>
+    </div>
+  </div>
 
-<form action="/teams/delete_all" method="post">
-  <label for="delete_all">Warning - This will Delete ALL Teams and Games</label>
+  <table class="teams_table">
+
+    <tr>
+      <th>Team Name</th>
+      <th>Logo</th>
+    </tr>
+
+    <% for team in @teams %>
+    <tr>
+      <td>
+        <a href='/teams/<%=team.id%>'><%= team.name %>
+        </a>
+      </td>
+      <td><img src="<%=team.logo%>" alt="team_logo"></td>
+    </tr>
+    <% end  %>
+
+  </table>
+
+  <form action="/teams/delete_all" method="post">
+    <label for="delete_all">Warning - This will Delete ALL Teams and Games</label>
     <input type="checkbox" name="confirmation" value="delete_all" required="required">
-  <input type="submit" value="Clear Team Data" id="delete_all">
+    <input type="submit" value="Clear Team Data" id="delete_all">
 </div>

@@ -3,23 +3,32 @@ body {
 }
 
 .nav ul li {
+  display: flex;
+  justify-content: center;
   list-style: none;
   background-color: #A5D0A8;
   text-align: center;
   padding: 0.2em;
-  margin: 0.5em;
+  padding-left: 3em;
+  padding-right: 3em;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-decoration: none;
 }
 
 .nav li {
+  display: flex;
+  justify-content: center;
   font-family: 'Impact', sans-serif;
   font-size: 2em;
   line-height: 40px;
   height: 40px;
   border-bottom: 2px solid #888;
+  text-decoration: none;
 }
 
 .games_page img {
-  width: 100%;
+  width: 50%;
   Height: auto;
 }
 
@@ -32,13 +41,63 @@ body {
   font-size: 1em;
   font-style: oblique;
   font-family: impact;
+  text-align: center;
+}
+
+.games_page h1 {
+  font-size: 2em;
+  font-family: impact;
+  font-stretch: extra-expanded;
+  text-align: center;
+}
+
+.games_page table {
+  display: flex;
+  flex-direction: column;
 }
 
 .teams_page img {
-  width: 25%;
+  width: 50%;
   Height: auto;
 }
 
 .teams_page table {
   text-align: center;
+  font-size: 2em;
+  font-style: oblique;
+  font-family: impact;
+  text-align: center;
+}
+
+.splash_page {
+  font-size: 2em;
+  font-family: impact;
+  text-align: center;
+  color: #8CADA7;
+}
+
+.button {
+  font-size: 2em;
+  font-family: impact;
+  font-style: oblique;
+  background-color: lightgrey;
+  padding: 0.2em;
+  margin: 0.1em;
+  border-bottom: 2px solid #888;
+  text-align: center;
+}
+
+.button ul {
+  list-style: none;
+}
+
+.log {
+  border: 2px;
+  padding: 5px;
+}
+
+.teams_table {
+  display: flex;
+  justify-content: center;
+
 }

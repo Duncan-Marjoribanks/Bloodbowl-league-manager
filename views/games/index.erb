@@ -5,29 +5,34 @@
     <a href='/games/add_game'>Log game</a>
   </tr>
   <tr>
+    <th>Home Team Logo</th>
     <th>Home Team</th>
     <th>Home Score</th>
+    <th>Away Team Logo</th>
     <th>Away Team</th>
     <th>Away Score</th>
-    <th>Winner</th>
     <th>Winner Logo</th>
+    <th>Winner</th>
+
   </tr>
-  <hr>
+  
   <% for game in @games %>
   <tr>
+    <td><img src="<%=Team.find(game.home).logo%>" alt="team_logo"></td>
     <td><a href='/teams/<%=game.home%>'>
     <%= game.team(game.home, "home").name %></a>
-    <hr>
+
   </td>
    <td><%= game.home_score() %></td>
-
+ <td><img src="<%=Team.find(game.away).logo%>" alt="team_logo"></td>
     <td><a href='/teams/<%= game.away%>'>
     <%= game.team(game.away, "away").name %></a>
-    <hr>
+
   </td>
    <td><%= game.away_score() %></td>
+     <td><img src="<%=Team.find(game.winner).logo%>" alt="team_logo"></td>
    <td><a href="/teams/<%=Team.find(game.winner).id %>"><%=Team.find(game.winner).name %></td>
-  <td><img src="<%=Team.find(game.winner).logo%>" alt="team_logo"></td>
+
 </tr>
   <% end %>
 </table>

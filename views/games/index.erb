@@ -1,3 +1,5 @@
+<div class="games_page">
+
 <h1>Games Played</h1>
 <hr>
 <table>
@@ -6,16 +8,16 @@
   </tr>
   <tr>
     <th>Home Team Logo</th>
-    <th>Home Team</th>
+    <th>Home Team Name</th>
     <th>Home Score</th>
     <th>Away Team Logo</th>
-    <th>Away Team</th>
+    <th>Away Team Name</th>
     <th>Away Score</th>
     <th>Winner Logo</th>
-    <th>Winner</th>
+    <th>Winner Name</th>
 
   </tr>
-  
+
   <% for game in @games %>
   <tr>
     <td><img src="<%=Team.find(game.home).logo%>" alt="team_logo"></td>
@@ -42,3 +44,5 @@
   <input type="checkbox" name="confirmation" value="Clear League Table"required="required">
   <input type="submit" value="Clear League Table" id="delete_all">
 </form>
+
+</div>

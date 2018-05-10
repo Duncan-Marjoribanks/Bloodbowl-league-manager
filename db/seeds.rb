@@ -11,42 +11,48 @@ Race.delete_all()
 race1 = Race.new ({
   'id' => 1,
   'name' => 'Humans',
-  'bio' => 'Human teams tend to have a well-rounded skill set. This grants them a degree of versatility that means they can attempt any sort of play and are almost impossible to predict.'
+  'bio' => 'Human teams tend to have a well-rounded skill set. This grants them a degree of versatility that means they can attempt any sort of play and are almost impossible to predict.',
+  'logo' => '/images/human_logo.png'
   })
 race1.save()
 
 race2 = Race.new ({
   'id' => 2,
   'name' => 'Orcs',
-  'bio' => 'Big, strong and heavily armoured, Orc teams’ preferred tactic is to mangle the opposing players until they litter the pitch and can no longer contest the ball – scoring points is a secondary concern.'
+  'bio' => 'Big, strong and heavily armoured, Orc teams’ preferred tactic is to mangle the opposing players until they litter the pitch and can no longer contest the ball – scoring points is a secondary concern.',
+  'logo' => '/images/orc_logo.png'
   })
 race2.save()
 
 race3 = Race.new ({
   'id' => 3,
   'name' => 'Goblins',
-  'bio' => '‘Famous’ is a word that implies a level of prestige, and as such it’s not normally associated with Goblin teams. Diminutive and visciously inventive they often surprise their opponents with the sneaking a secret chainsaw onto the pitch.'
+  'bio' => '‘Famous’ is a word that implies a level of prestige, and as such it’s not normally associated with Goblin teams. Diminutive and visciously inventive they often surprise their opponents with the sneaking a secret chainsaw onto the pitch.',
+  'logo' => '/images/goblin_logo.png'
   })
 race3.save()
 
 race4 = Race.new ({
   'id' => 4,
   'name' => 'Chaotic Mutants',
-  'bio' => 'Hailing from the frozen north of the Chaos wastes, this rabble of outcasts and heretical mutants have banded together to stomp some heads and score some goals. Having a few extra limbs and horns never hurts their chances either.'
+  'bio' => 'Hailing from the frozen north of the Chaos wastes, this rabble of outcasts and heretical mutants have banded together to stomp some heads and score some goals. Having a few extra limbs and horns never hurts their chances either.',
+  'logo' => '/images/chaos_logo.png'
   })
 race4.save()
 
 race5 = Race.new ({
   'id' => 5,
   'name' => 'Elves',
-  'bio' => 'Elves are fragile, pointy, and FAST. They believe they are the best and are irritatingly often proven to be right, which makes it all the more satisfying when one of them is maimed on the pitch'
+  'bio' => 'Elves are fragile, pointy, and FAST. They believe they are the best and are irritatingly often proven to be right, which makes it all the more satisfying when one of them is maimed on the pitch',
+  'logo' => '/images/elf_logo.png'
   })
 race5.save()
 
 race6 = Race.new ({
   'id' => 6,
   'name' => 'Dwarves',
-  'bio' => 'Dwarves are a stubborn and stalwart race, favouring a slow solid advance over a fast uncontrolled rush. This is true even when it comes to Blood Bowl. Many Dwarf teams believe a good defence is the best offence, just dont ask them top pass the ball.'
+  'bio' => 'Dwarves are a stubborn and stalwart race, favouring a slow solid advance over a fast uncontrolled rush. This is true even when it comes to Blood Bowl. Many Dwarf teams believe a good defence is the best offence, just dont ask them top pass the ball.',
+  'logo' => '/images/dwarf_logo.png'
   })
 race6.save
 

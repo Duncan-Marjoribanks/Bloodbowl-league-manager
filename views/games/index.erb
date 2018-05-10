@@ -10,6 +10,7 @@
     <th>Away Team</th>
     <th>Away Score</th>
     <th>Winner</th>
+    <th>Winner Logo</th>
   </tr>
   <hr>
   <% for game in @games %>
@@ -26,6 +27,7 @@
   </td>
    <td><%= game.away_score() %></td>
    <td><a href="/teams/<%=Team.find(game.winner).id %>"><%=Team.find(game.winner).name %></td>
+  <td><img src="<%=Team.find(game.winner).logo%>" alt="team_logo"></td>
 </tr>
   <% end %>
 </table>

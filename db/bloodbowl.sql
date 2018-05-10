@@ -6,7 +6,8 @@ DROP TABLE races;
 CREATE TABLE races (
   id INT4 PRIMARY KEY,
   name VARCHAR(255),
-  bio VARCHAR(255)
+  bio VARCHAR(255),
+  logo VARCHAR(255)
 );
 
 CREATE TABLE teams (

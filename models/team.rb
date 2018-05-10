@@ -80,4 +80,11 @@ class Team
     return race.first
   end
 
+  def logo()
+    sql = 'SELECT races.logo FROM races WHERE races.id = $1'
+    values =[@race]
+    race = SqlRunner.run(sql,values)
+    return race.first['logo']
+  end
+
 end
